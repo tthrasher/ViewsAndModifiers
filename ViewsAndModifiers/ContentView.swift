@@ -98,7 +98,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("Challenge Accepted")
+            Text("Challenge Completed")
                 .blueTitle()
             CapsuleText(text: "First")
             CapsuleText(text: "Not first")
