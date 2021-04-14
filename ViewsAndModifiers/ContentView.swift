@@ -77,10 +77,29 @@ struct Title: ViewModifier {
     }
 }
 
+// Challenge 1 asks me to create a custom ViewModifier and View extension for a large, blue font suitable for prominent titles.
+struct BlueTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.blue)
+            .padding()
+            .background(Color.white)
+    }
+}
+
+extension View {
+    func blueTitle() -> some View {
+        self.modifier(BlueTitle())
+    }
+}
+
 struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 10) {
+            Text("Challenge Accepted")
+                .blueTitle()
             CapsuleText(text: "First")
             CapsuleText(text: "Not first")
                 .foregroundColor(.yellow)
